@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Diseño y Desarrollo Web | Páginas Corporativas en Perú</title>
+    <style>
+        /* ==========================================
+           1. ESTILOS BASE Y CONFIGURACIÓN
+           ========================================== */
+        :root {
+            --primary-blue: #0056b3;   /* Azul corporativo fuerte */
+            --dark-blue: #0a192f;      /* Azul oscuro institucional */
+            --accent-green: #25d366;   /* Verde WhatsApp */
+            --text-dark: #333333;
+            --bg-light: #f4f6f9;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+/* ==========================================
+           8. NUEVA SECCIÓN: NOSOTROS
+           ========================================== */
+        .about-wrapper {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box {
+            flex: 1;
+        }
+
+        .about-tag {
+            display: inline-block;
+            color: var(--primary-blue);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .text-box h2 {
+            font-size: 32px;
+            color: var(--dark-blue);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .text-box p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Pilares de confianza */
+        .pilar-card {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .pilar-icon {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .pilar-text h3 {
+            font-size: 18px;
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+        }
+
+        .pilar-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        
+        @media (max-width: 768px) {
+            .about-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .text-box h2 {
+                font-size: 24px;
+            }
+        }
+        
+        .top-bar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+            color: #666;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-contact span {
+            margin-right: 20px;
+        }
+
+        /* ==========================================
+           3. MENÚ DE NAVEGACIÓN PRINCIPAL
+           ========================================== */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .agency-logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .agency-logo span {
+            color: var(--dark-blue);
+        }
+
+        nav a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ==========================================
+           4. BANNER PRINCIPAL (HERO SLIDER STYLE)
+           ========================================== */
+        .hero-banner {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-banner .tagline {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #63b3ed;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero-banner h1 {
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Precio destacado estilo la referencia */
+        .promo-price {
+            font-size: 55px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .promo-price span {
+            color: #63b3ed;
+        }
+
+        .btn-pack {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 15px;
+        }
+
+        .btn-pack:hover {
+            background-color: #004085;
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           5. SECCIÓN DE PLANES / PRECIOS
+           ========================================== */
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-grey {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            /* SOLUCIÓN: Convertimos la tarjeta en un contenedor Flex vertical */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .plan-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .plan-price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            
+            /* SOLUCIÓN: Hace que la lista ocupe todo el espacio disponible 
+               y empuje el botón de abajo hacia el extremo inferior */
+            flex-grow: 1; 
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--bg-light);
+            font-size: 14px;
+            color: #555;
+        }
+
+        .plan-features li::before {
+            content: '✓ ';
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* ==========================================
+           6. BOTÓN FLOTANTE DE WHATSAPP
+           ========================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 14px 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre el ícono y el texto */
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s, background-color 0.3s;
+            
+            /* Aplicamos una animación de pulso infinito para llamar la atención */
+            animation: pulse-green 2s infinite;
+        }
+
+        /* Cambia de color sutilmente al pasar el mouse */
+        .whatsapp-float:hover {
+            background-color: #20ba56;
+            transform: scale(1.05);
+        }
+
+        /* Estilos específicos para dimensionar el ícono SVG blanco */
+        .whatsapp-float svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor; /* Hace que herede el color blanco del texto */
+        }
+
+        /* EFECTO DE ANIMACIÓN: Sombra expansiva automática */
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Ajuste para que en celulares no tape contenido importante */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            .whatsapp-float svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        /* ==========================================
+           7. FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--dark-blue);
+            color: #a0aec0;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVIDAD PARA CELULARES */
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            header .container { flex-direction: column; height: auto; padding: 15px 0; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; font-size: 13px; }
+            .hero-banner h1 { font-size: 28px; }
+            .promo-price { font-size: 40px; }
+            .price-card.featured { transform: none; }
+        }
+        /* ==========================================
+           9. SECCIÓN: PREGUNTAS FRECUENTES (FAQ)
+           ========================================== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            padding: 20px;
+            border-bottom: 3px solid var(--border-color);
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* ==========================================
+           10. SECCIÓN: FORMULARIO DE COTIZACIÓN
+           ========================================== */
+        /* ==========================================
+           10. SECCIÓN: FORMULARIO DE COTIZACIÓN (ESTABLE)
+           ========================================== */
+        .form-wrapper {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 850px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        .quote-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Manejo de filas independientes */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1; /* Distribuye el espacio equitativamente en la fila */
+        }
+
+        .form-group.full-width {
+            flex: 1;
+            width: 100%;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-blue);
+            line-height: 1.4;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 15px;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary-blue);
+            background-color: #ffffff;
+        }
+
+        .form-actions {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* RESPONSIVO COMPLETO: Todo a una columna en celulares */
+        @media (max-width: 768px) {
+            .form-wrapper {
+                padding: 20px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA CONTACTO SUPERIOR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-contact">
+                <span>✉ ventas@tuagencia.com</span>
+                <span>📞 Movil: 957 302 677</span>
+            </div>
+            <div>🇵🇪 Cobertura en todo el Perú</div>
+        </div>
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <header>
+        <div class="container">
+            <a href="#" class="agency-logo">Nova<span>Web</span></a>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#planes">Planes</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#nosotros">Nosotros</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BANNER PROFESIONAL -->
+    <section id="inicio" class="hero-banner">
+        <div class="container">
+            <div class="tagline">Diseño de Páginas Web Económicas y Responsive</div>
+            <h1>Desarrollamos la Web Completa para tu Negocio o Empresa</h1>
+            <div class="promo-price">Desde S/. 349 <span>soles</span></div>
+            <a href="#planes" class="btn-pack">Ver Packs Promocionales</a>
+        </div>
+    </section>
+<!-- SECCIÓN NOSOTROS (CULTURA DE CONFIANZA) -->
+    <section id="nosotros" class="section">
+        <div class="container">
+            <div class="about-wrapper">
+                
+                <!-- Columna Izquierda: Imagen Corporativa / Resumen -->
+                <div class="about-box text-box">
+                    <span class="about-tag">¿Quiénes Somos?</span>
+                    <h2>Un equipo tecnológico comprometido con el crecimiento de tu empresa</h2>
+                    <p>En <strong>NovaWeb</strong> no solo diseñamos páginas web; creamos herramientas digitales que trabajan para tu negocio las 24 horas del día. Somos un equipo especializado en desarrollo de software, diseño de interfaces y optimización de conversión comercial con base en Lima, Perú.</p>
+                </div>
+
+                <!-- Columna Derecha: Los 3 pilares de confianza -->
+                <div class="about-box pillars-box">
+                    
+                    <div class="pilar-card">
+                        <div class="pilar-icon">🛡️</div>
+                        <div class="pilar-text">
+                            <h3>Garantía y Soporte</h3>
+                            <p>No te dejamos solo. Todos nuestros proyectos incluyen soporte técnico post-entrega para asegurar que tu web funcione siempre al 100%.</p>
+                        </div>
+                    </div>
+
+                    <div class="pilar-card">
+                        <div class="pilar-icon">⚡</div>
+                        <div class="pilar-text">
+                            <h3>Velocidad y Calidad</h3>
+                            <p>Programamos con código optimizado (HTML puro y frameworks estables como Laravel) para que tu página cargue al instante en cualquier smartphone.</p>
+                        </div>
+                    </div>
+
+                    <div class="pilar-card">
+                        <div class="pilar-icon">💼</div>
+                        <div class="pilar-text">
+                            <h3>Formalidad Absoluta</h3>
+                            <p>Trabajamos bajo requerimientos claros, entregas puntuales y emitimos comprobantes de pago para la contabilidad de tu empresa.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN DE PLANES / PRECIOS -->
+    <section id="planes" class="section bg-grey">
+        <div class="container">
+            <h2 class="section-title">Nuestros Packs de Diseño Web</h2>
+            <p class="section-subtitle">Elige el plan ideal para digitalizar tu negocio hoy mismo. Ofrecemos soluciones rápidas y profesionales con soporte garantizado.</p>
+            
+            <div class="pricing-grid">
+                
+                <!-- Plan Emprendedor -->
+                <div class="price-card">
+                    <div class="plan-name">Pack Emprendedor (Basica)</div>
+                    <div class="plan-price">S/. 349</div>
+                    <ul class="plan-features">
+                        <li><strong>Diseño One-Page:</strong> 1 Sección fluida de alto impacto comercial</li>
+                        <li><strong>Dominio Incluido:</strong> Registro de dominio (.com) gratis por 1 año</li>
+                        <li><strong>Hosting Veloz:</strong> 2 GB de espacio en SSD (Ideal para PYMES)</li>
+                        <li><strong>1 Correo Corporativo:</strong> Ejemplo: info@tunegocio.com</li>
+                        <li><strong>Optimizado para Celulares:</strong> Diseño 100% Responsive</li>
+                        <li><strong>Botón de WhatsApp:</strong> Configurado para pedidos rápidos</li>
+                        <li><strong>Certificado SSL:</strong> Candado de seguridad HTTPS gratis</li>
+                        <li>Entrega Express en 3 a 5 días útiles</li>
+                        
+                    </ul>
+                    <a href="https://wa.me/51957302677?text=Hola,%20deseo%20informacion%20del%20Pack%20Emprendedor" class="btn-pack" style="background-color: var(--dark-blue);">Solicitar Pack</a>
+                </div>
+
+                <!-- Plan Corporativo (Destacado) -->
+                <div class="price-card featured">
+                    <div class="plan-name" style="color: var(--primary-blue);">Pack Pyme Corporativo (Profesional)</div>
+                    <div class="plan-price">S/. 699</div>
+                    <ul class="plan-features">
+                        <li><strong>Hasta 5 Páginas:</strong> Inicio, Nosotros, Servicios, Blog, Contacto</li>
+                        <li><strong>Dominio Incluido:</strong> Registro de dominio (.com) gratis por 1 año</li>
+                        <li><strong>Hosting Premium:</strong> 5 GB de espacio en SSD de alta velocidad</li>
+                        <li><strong>5 Correos Corporativos:</strong> Para las diferentes áreas de tu empresa</li>
+                        <li><strong>SEO Básico:</strong> Optimizado para empezar a aparecer en Google</li>
+                        <li><strong>Panel Autoadministrable:</strong> Para que cambies textos o fotos fácilmente</li>
+                    </ul>
+                    <a href="https://wa.me/51957302677?text=Hola,%20deseo%20informacion%20del%20Pack%20Pyme" class="btn-pack">Solicitar Pack</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN: PREGUNTAS FRECUENTES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos tus dudas técnicas y comerciales para iniciar tu proyecto con total tranquilidad.</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>¿Cómo es la forma de pago?</h3>
+                    <p>Trabajamos con un adelanto del 50% para iniciar el desarrollo y el 50% restante se cancela contra entrega, una vez que estés totalmente conforme con la página web.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿La renovación anual cuánto cuesta?</h3>
+                    <p>El primer año el hosting y dominio .com son gratis. A partir del segundo año, la renovación tiene un costo único y accesible (aproximadamente S/. 180) para mantener tus servicios activos.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Emiten comprobantes de pago?</h3>
+                    <p>Sí, emitimos boletas o facturas electrónicas según lo requiera tu empresa o negocio para tu contabilidad o deducción de gastos frente a SUNAT.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Puedo actualizar la página yo mismo en el futuro?</h3>
+                    <p>¡Por supuesto! En el Pack Pyme te entregamos un panel autoadministrable muy intuitivo. Además, te brindamos una breve capacitación en video para que aprendas a cambiar textos o fotos sin depender de nadie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECCIÓN: FORMULARIO DE COTIZACIÓN (ESTRUCTURA ANTIBUG) -->
+    <section class="section bg-grey">
+        <div class="container">
+            <h2 class="section-title">Solicita una Cotización Formal</h2>
+            <p class="section-subtitle">¿Tienes un proyecto con requerimientos especiales? Cuéntanos tu idea y nuestro equipo técnico te enviará una propuesta detallada.</p>
+            
+            <div class="form-wrapper">
+                <form class="quote-form" id="miFormulario" onsubmit="enviarAWhatsApp(event)">
+                    
+                    <!-- Fila 1: Nombre y WhatsApp -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo / Empresa</label>
+                            <input type="text" id="nombre" placeholder="Ej. Juan Pérez / Inversiones SAC" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">Número de WhatsApp</label>
+                            <input type="tel" id="whatsapp" placeholder="Ej. 999 999 999" required>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Correo y Plan -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico</label>
+                            <input type="email" id="correo" placeholder="Ej. contacto@tuempresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Plan de Interés</label>
+                            <select id="plan">
+                                <option value="Pack Emprendedor - S/. 349">Pack Emprendedor - S/. 349</option>
+                                <option value="Pack Pyme Corporativo - S/. 699">Pack Pyme Corporativo - S/. 699</option>
+                                <option value="Proyecto Web a Medida (Laravel)">Proyecto Web a Medida (Laravel)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Detalles (Ancho Completo) -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="detalles">Cuéntanos brevemente sobre tu negocio y qué necesitas</label>
+                            <textarea id="detalles" rows="4" placeholder="Ej. Necesito una página para mi veterinaria en San Borja..." required></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Fila 4: Botón Centrado -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-pack" style="border: none; cursor: pointer; width: 100%; max-width: 300px; display: inline-block;">Enviar Requerimiento</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/519573025677?text=Hola,%20estoy%20interesado%20en%20una%20pagina%20web." class="whatsapp-float" target="_blank">
+        <!-- Ícono oficial de WhatsApp en formato SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        Consultas en Línea
+    </a>
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto">
+        <div class="container">
+            <p>&copy; 2026 NovaWeb Agencia Digital. Todos los derechos reservados.</p>
+            <p>Servicio de Desarrollo Tecnológico de Alta Calidad - Lima, Perú</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+function enviarAWhatsApp(event) {
+    event.preventDefault(); // Evita que la página se recargue
+
+    // 1. Capturamos los datos que el usuario escribió
+    const nombre = document.getElementById('nombre').value;
+    const telefonoCliente = document.getElementById('whatsapp').value;
+    const correo = document.getElementById('correo').value;
+    const plan = document.getElementById('plan').value;
+    const detalles = document.getElementById('detalles').value;
+
+    // REEMPLAZA las X con tu número de teléfono real manteniendo el 51 de Perú
+    const tuNumeroWhatsApp = "51957302677"; 
+
+    // 2. Armamos el texto ordenado que te llegará a tu chat
+    const mensaje = `Hola NovaWeb, deseo una cotización:%0A` +
+                    `*Nombre:* ${encodeURIComponent(nombre)}%0A` +
+                    `*WhatsApp:* ${encodeURIComponent(telefonoCliente)}%0A` +
+                    `*Correo:* ${encodeURIComponent(correo)}%0A` +
+                    `*Plan:* ${encodeURIComponent(plan)}%0A` +
+                    `*Detalles:* ${encodeURIComponent(detalles)}`;
+
+    // 3. Abrimos la ventana de WhatsApp con el mensaje estructurado
+    window.open(`https://wa.me/${tuNumeroWhatsApp}?text=${mensaje}`, '_blank');
+
+    // 4. LIMPIEZA AUTOMÁTICA: Resetea todos los campos del formulario al instante
+    document.getElementById('miFormulario').reset();
+}
+</script>
+</html>
